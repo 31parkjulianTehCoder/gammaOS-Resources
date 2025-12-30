@@ -1,0 +1,53 @@
+<!DOCYPUE html>
+<style>
+    body {
+        background-color: #1e1926;
+        color: white;
+        font-family: "helvetica", sans-serif;
+    }
+    button {
+      color: white;
+      background-color: dodgerblue;
+      padding: 10px;
+      border-radius:10px;
+      text-decoration: none;
+      transition: padding 0.2s, background-color 0.2s;
+    }
+    button:hover {
+      color: white;
+      background-color: rgb(108, 182, 255);
+      padding: 15px;
+      border-radius:10px;
+    }
+    input {
+      color: black;
+      padding: 10px;
+      border-radius:10px;
+      text-decoration: none;
+      transition: padding 0.2s, background-color 0.2s;
+    }
+</style>
+<script>
+    function searchYep() {
+      const query = document.getElementById('searchInput').value;
+      if (query) {
+        const searchURL = `https://www.yep.com/web?q=${encodeURIComponent(query)}`;
+        window.location.href = searchURL;
+      } else {
+        alert('Please enter a search term');
+      }
+    }
+    function openUrlOne(x) {
+        window.location.href = `https://www.bing.com/news`;
+    }
+    function openUrlTwo(x) {
+        window.location.href = `https://www.accuweather.com/`;
+    }
+</script>
+<div style = "text-align: center;">
+    <p style = "font-size: 40px;">Where to next?</p>
+    <input id="searchInput" type="text" />
+    <button onclick="searchYep()">Search Yep</button>
+    <button onclick = "openUrlOne()">News</button>
+    <button onclick = "openUrlTwo()">Weather</button>
+</div>
